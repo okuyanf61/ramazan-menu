@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Günlük İftar Menüsü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #fdfbf7 0%, #f8f6f2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 794px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 45px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border-radius: 2px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .header-icon {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 16px;
+            opacity: 0.85;
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 13px;
+            color: #666;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .week-section {
+            margin-bottom: 36px;
+        }
+        
+        .week-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .week-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d2d2d;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e8e5df;
+            letter-spacing: 0.5px;
+        }
+        
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        
+        .day-card {
+            background: #fafaf8;
+            border: 1px solid #e8e5df;
+            border-radius: 8px;
+            padding: 12px 10px;
+            transition: all 0.2s ease;
+            position: relative;
+            min-height: 100px;
+        }
+        
+        .day-card:hover {
+            background: #f5f4f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .day-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #8b7355;
+            margin-bottom: 6px;
+            line-height: 1;
+        }
+        
+        .meal-name {
+            font-size: 11.5px;
+            line-height: 1.5;
+            color: #3d3d3d;
+            font-weight: 500;
+        }
+        
+        .meal-name br {
+            content: "";
+            display: block;
+            margin: 2px 0;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e8e5df;
+        }
+        
+        .footer-icon {
+            width: 20px;
+            height: 20px;
+            opacity: 0.4;
+            margin: 0 auto 8px;
+        }
+        
+        .footer-text {
+            font-size: 11px;
+            color: #999;
+            letter-spacing: 1px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 40px;
+                max-width: 100%;
+            }
+            
+            .day-card {
+                break-inside: avoid;
+            }
+        }
+        
+        @page {
+            size: A4 portrait;
+            margin: 15mm;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <svg class="header-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="#8b7355" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <h1>30 GÜNLÜK İFTAR MENÜSÜ</h1>
+            <p class="subtitle">Ramazan 2025</p>
+        </header>
+        
+        <!-- Week 1 -->
+        <div class="week-section">
+            <div class="week-header">1. HAFTA</div>
+            <div class="days-grid">
+                <div class="day-card">
+                    <div class="day-number">1</div>
+                    <div class="meal-name">Tavuk Sote +<br>Cacık</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">2</div>
+                    <div class="meal-name">Ali Nazik +<br>Salata</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">3</div>
+                    <div class="meal-name">Kasap Köfte +<br>Haydari + Bulgur</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">4</div>
+                    <div class="meal-name">Köfte Rosto +<br>Yoğurt</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">5</div>
+                    <div class="meal-name">Kıymalı Ispanak +<br>Cacık</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">6</div>
+                    <div class="meal-name">Et Sote +<br>Kereviz Salatası</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">7</div>
+                    <div class="meal-name">Fırın Tavuk But +<br>Havuç Tarator</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Week 2 -->
+        <div class="week-section">
+            <div class="week-header">2. HAFTA</div>
+            <div class="days-grid">
+                <div class="day-card">
+                    <div class="day-number">8</div>
+                    <div class="meal-name">Hünkar Beğendi +<br>Salata</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">9</div>
+                    <div class="meal-name">Kuru Fasulye +<br>Cacık</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">10</div>
+                    <div class="meal-name">Izgara Tavuk +<br>Haydari + Firik</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">11</div>
+                    <div class="meal-name">Mantarlı Dana<br>Sote + Yoğurt</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">12</div>
+                    <div class="meal-name">Yaprak Sarma +<br>Yoğurt</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">13</div>
+                    <div class="meal-name">Kasap Köfte +<br>Borani</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">14</div>
+                    <div class="meal-name">Nohut +<br>Salata</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Week 3 -->
+        <div class="week-section">
+            <div class="week-header">3. HAFTA</div>
+            <div class="days-grid">
+                <div class="day-card">
+                    <div class="day-number">15</div>
+                    <div class="meal-name">Dana Rosto +<br>Cacık</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">16</div>
+                    <div class="meal-name">Tavuk Sote +<br>Haydari + Bulgur</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">17</div>
+                    <div class="meal-name">Ali Nazik</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">18</div>
+                    <div class="meal-name">Kıymalı<br>Karnabahar +<br>Yoğurt</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">19</div>
+                    <div class="meal-name">Et Sote +<br>Mantar</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">20</div>
+                    <div class="meal-name">Dolma +<br>Cacık</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">21</div>
+                    <div class="meal-name">Kasap Köfte +<br>Salata</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Week 4 -->
+        <div class="week-section">
+            <div class="week-header">4. HAFTA</div>
+            <div class="days-grid">
+                <div class="day-card">
+                    <div class="day-number">22</div>
+                    <div class="meal-name">Hünkar<br>Beğendi</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">23</div>
+                    <div class="meal-name">Tavuk But +<br>Borani</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">24</div>
+                    <div class="meal-name">Kuru Fasulye +<br>Yoğurt</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">25</div>
+                    <div class="meal-name">Dana Sote +<br>Firik</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">26</div>
+                    <div class="meal-name">Kıymalı Ispanak +<br>Cacık</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">27</div>
+                    <div class="meal-name">Ali Nazik</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">28</div>
+                    <div class="meal-name">Mantarlı Tavuk +<br>Haydari</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Days 29-30 -->
+        <div class="week-section">
+            <div class="days-grid" style="grid-template-columns: repeat(7, 1fr);">
+                <div class="day-card">
+                    <div class="day-number">29</div>
+                    <div class="meal-name">Izgara Et veya<br>Tavuk (Serbest)</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">30</div>
+                    <div class="meal-name">Karışık Izgara</div>
+                </div>
+                <div style="grid-column: span 5;"></div>
+            </div>
+        </div>
+        
+        <footer>
+            <svg class="footer-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 2.5V6M15 2.5V6M3.5 9.5H20.5M5 4.5H19C19.8284 4.5 20.5 5.17157 20.5 6V20C20.5 20.8284 19.8284 21.5 19 21.5H5C4.17157 21.5 3.5 20.8284 3.5 20V6C3.5 5.17157 4.17157 4.5 5 4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="footer-text">HAYIRLI İFTARLAR</p>
+        </footer>
+    </div>
+</body>
+</html>
