@@ -114,6 +114,10 @@
             color: #3d3d3d;
             font-weight: 500;
         }
+
+        .menu-item {
+            cursor: pointer;
+        }
         
         .meal-name br {
             content: "";
@@ -141,6 +145,130 @@
             letter-spacing: 1px;
         }
         
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 1000;
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0.2s ease;
+        }
+
+        .modal.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 12px;
+            max-width: 560px;
+            width: 100%;
+            padding: 24px 22px 22px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+            animation: modal-appear 0.22s ease-out;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d2d2d;
+        }
+
+        .close-btn {
+            font-size: 22px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            line-height: 1;
+            color: #777;
+            padding: 4px 6px;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .modal-section-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8b7355;
+            margin: 14px 0 6px;
+        }
+
+        #modal-ingredients,
+        #modal-steps {
+            margin-left: 18px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        #modal-ingredients li + li,
+        #modal-steps li + li {
+            margin-top: 2px;
+        }
+
+        #modal-video {
+            margin-top: 6px;
+            font-size: 12px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 oran */
+            margin-top: 6px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        @keyframes modal-appear {
+            from {
+                transform: translateY(8px) scale(0.96);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 600px) {
+            .modal-content {
+                padding: 20px 18px 18px;
+            }
+
+            .modal-title {
+                font-size: 20px;
+            }
+        }
+
         @media print {
             body {
                 background: white;
@@ -180,31 +308,31 @@
             <div class="days-grid">
                 <div class="day-card">
                     <div class="day-number">1</div>
-                    <div class="meal-name">Tavuk Sote +<br>Cacık</div>
+                    <div class="meal-name menu-item">Tavuk Sote +<br>Cacık</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">2</div>
-                    <div class="meal-name">Ali Nazik +<br>Salata</div>
+                    <div class="meal-name menu-item">Ali Nazik +<br>Salata</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">3</div>
-                    <div class="meal-name">Kasap Köfte +<br>Haydari + Bulgur</div>
+                    <div class="meal-name menu-item">Kasap Köfte +<br>Haydari + Bulgur</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">4</div>
-                    <div class="meal-name">Köfte Rosto +<br>Yoğurt</div>
+                    <div class="meal-name menu-item">Köfte Rosto +<br>Yoğurt</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">5</div>
-                    <div class="meal-name">Kıymalı Ispanak +<br>Cacık</div>
+                    <div class="meal-name menu-item">Kıymalı Ispanak +<br>Cacık</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">6</div>
-                    <div class="meal-name">Et Sote +<br>Kereviz Salatası</div>
+                    <div class="meal-name menu-item">Et Sote +<br>Kereviz Salatası</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">7</div>
-                    <div class="meal-name">Fırın Tavuk But +<br>Havuç Tarator</div>
+                    <div class="meal-name menu-item">Fırın Tavuk But +<br>Havuç Tarator</div>
                 </div>
             </div>
         </div>
@@ -215,31 +343,31 @@
             <div class="days-grid">
                 <div class="day-card">
                     <div class="day-number">8</div>
-                    <div class="meal-name">Hünkar Beğendi +<br>Salata</div>
+                    <div class="meal-name menu-item">Hünkar Beğendi +<br>Salata</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">9</div>
-                    <div class="meal-name">Kuru Fasulye +<br>Cacık</div>
+                    <div class="meal-name menu-item">Kuru Fasulye +<br>Cacık</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">10</div>
-                    <div class="meal-name">Izgara Tavuk +<br>Haydari + Firik</div>
+                    <div class="meal-name menu-item">Izgara Tavuk +<br>Haydari + Firik</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">11</div>
-                    <div class="meal-name">Mantarlı Dana<br>Sote + Yoğurt</div>
+                    <div class="meal-name menu-item">Mantarlı Dana<br>Sote + Yoğurt</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">12</div>
-                    <div class="meal-name">Yaprak Sarma +<br>Yoğurt</div>
+                    <div class="meal-name menu-item">Yaprak Sarma +<br>Yoğurt</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">13</div>
-                    <div class="meal-name">Kasap Köfte +<br>Borani</div>
+                    <div class="meal-name menu-item">Kasap Köfte +<br>Borani</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">14</div>
-                    <div class="meal-name">Nohut +<br>Salata</div>
+                    <div class="meal-name menu-item">Nohut +<br>Salata</div>
                 </div>
             </div>
         </div>
@@ -250,31 +378,31 @@
             <div class="days-grid">
                 <div class="day-card">
                     <div class="day-number">15</div>
-                    <div class="meal-name">Dana Rosto +<br>Cacık</div>
+                    <div class="meal-name menu-item">Dana Rosto +<br>Cacık</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">16</div>
-                    <div class="meal-name">Tavuk Sote +<br>Haydari + Bulgur</div>
+                    <div class="meal-name menu-item">Tavuk Sote +<br>Haydari + Bulgur</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">17</div>
-                    <div class="meal-name">Ali Nazik</div>
+                    <div class="meal-name menu-item">Ali Nazik</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">18</div>
-                    <div class="meal-name">Kıymalı<br>Karnabahar +<br>Yoğurt</div>
+                    <div class="meal-name menu-item">Kıymalı<br>Karnabahar +<br>Yoğurt</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">19</div>
-                    <div class="meal-name">Et Sote +<br>Mantar</div>
+                    <div class="meal-name menu-item">Et Sote +<br>Mantar</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">20</div>
-                    <div class="meal-name">Dolma +<br>Cacık</div>
+                    <div class="meal-name menu-item">Dolma +<br>Cacık</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">21</div>
-                    <div class="meal-name">Kasap Köfte +<br>Salata</div>
+                    <div class="meal-name menu-item">Kasap Köfte +<br>Salata</div>
                 </div>
             </div>
         </div>
@@ -285,31 +413,31 @@
             <div class="days-grid">
                 <div class="day-card">
                     <div class="day-number">22</div>
-                    <div class="meal-name">Hünkar<br>Beğendi</div>
+                    <div class="meal-name menu-item">Hünkar<br>Beğendi</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">23</div>
-                    <div class="meal-name">Tavuk But +<br>Borani</div>
+                    <div class="meal-name menu-item">Tavuk But +<br>Borani</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">24</div>
-                    <div class="meal-name">Kuru Fasulye +<br>Yoğurt</div>
+                    <div class="meal-name menu-item">Kuru Fasulye +<br>Yoğurt</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">25</div>
-                    <div class="meal-name">Dana Sote +<br>Firik</div>
+                    <div class="meal-name menu-item">Dana Sote +<br>Firik</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">26</div>
-                    <div class="meal-name">Kıymalı Ispanak +<br>Cacık</div>
+                    <div class="meal-name menu-item">Kıymalı Ispanak +<br>Cacık</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">27</div>
-                    <div class="meal-name">Ali Nazik</div>
+                    <div class="meal-name menu-item">Ali Nazik</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">28</div>
-                    <div class="meal-name">Mantarlı Tavuk +<br>Haydari</div>
+                    <div class="meal-name menu-item">Mantarlı Tavuk +<br>Haydari</div>
                 </div>
             </div>
         </div>
@@ -319,11 +447,11 @@
             <div class="days-grid" style="grid-template-columns: repeat(7, 1fr);">
                 <div class="day-card">
                     <div class="day-number">29</div>
-                    <div class="meal-name">Izgara Et veya<br>Tavuk (Serbest)</div>
+                    <div class="meal-name menu-item">Izgara Et veya<br>Tavuk (Serbest)</div>
                 </div>
                 <div class="day-card">
                     <div class="day-number">30</div>
-                    <div class="meal-name">Karışık Izgara</div>
+                    <div class="meal-name menu-item">Karışık Izgara</div>
                 </div>
                 <div style="grid-column: span 5;"></div>
             </div>
@@ -336,5 +464,471 @@
             <p class="footer-text">HAYIRLI İFTARLAR</p>
         </footer>
     </div>
+
+    <!-- Reusable recipe modal -->
+    <div id="recipe-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title" class="modal-title"></h2>
+                <button type="button" class="close-btn" aria-label="Kapat">&times;</button>
+            </div>
+            <h3 class="modal-section-title">Malzemeler</h3>
+            <ul id="modal-ingredients"></ul>
+            <h3 class="modal-section-title">Tarif</h3>
+            <ol id="modal-steps"></ol>
+            <h3 class="modal-section-title">Video</h3>
+            <div id="modal-video"></div>
+        </div>
+    </div>
+
+    <script>
+        // Basit tarif verileri – menüdeki tüm ana yemekler için
+        const recipes = {
+            "Ali Nazik": {
+                ingredients: [
+                    "500 g kıyma veya kuşbaşı et",
+                    "4 adet közlenmiş patlıcan",
+                    "2 su bardağı süzme yoğurt",
+                    "2 diş sarımsak",
+                    "2 yemek kaşığı tereyağı",
+                    "1 yemek kaşığı domates veya biber salçası",
+                    "Tuz, karabiber, pul biber"
+                ],
+                steps: [
+                    "Patlıcanları közleyip kabuklarını soyun ve bıçakla ince ince kıyın.",
+                    "Yoğurt ve ezilmiş sarımsağı bir kapta karıştırın, közlenmiş patlıcanları ekleyip tuzla tatlandırın.",
+                    "Tavada kıymayı veya eti kavurun, salçayı ve baharatları ekleyip birkaç dakika pişirin.",
+                    "Servis tabağına yoğurtlu patlıcan karışımını yayın.",
+                    "Üzerine sıcak et karışımını ekleyin, eritilmiş tereyağını gezdirip sıcak servis edin."
+                ]
+            },
+            "Tavuk Sote": {
+                ingredients: [
+                    "500 g kuşbaşı tavuk göğsü veya but",
+                    "1 adet soğan",
+                    "2 adet yeşil biber",
+                    "2 adet domates",
+                    "2 yemek kaşığı zeytinyağı",
+                    "Tuz, karabiber, kekik"
+                ],
+                steps: [
+                    "Tavaya yağı alın, yemeklik doğranmış soğanı soteleyin.",
+                    "Tavuğu ekleyip suyunu salıp çekene kadar orta ateşte pişirin.",
+                    "Doğranmış biberleri ekleyip birkaç dakika daha soteleyin.",
+                    "Kabukları soyulmuş, doğranmış domatesleri ve baharatları ekleyip yumuşayana kadar pişirin.",
+                    "Pilav veya bulgur eşliğinde sıcak servis edin."
+                ],
+                videoId: "3wo7qr6PIU4"
+            },
+            "Kasap Köfte": {
+                ingredients: [
+                    "500 g orta yağlı kıyma",
+                    "1 adet soğan (rendelenmiş)",
+                    "2 yemek kaşığı galeta unu veya bayat ekmek içi",
+                    "1 adet yumurta",
+                    "1 diş sarımsak (isteğe bağlı)",
+                    "Tuz, karabiber, kimyon"
+                ],
+                steps: [
+                    "Tüm malzemeleri derin bir kapta iyice yoğurun.",
+                    "Harçtan parçalar koparıp kasap köfte şeklinde yassı köfteler hazırlayın.",
+                    "Üzerini streçleyip en az 30 dakika buzdolabında dinlendirin.",
+                    "Izgara veya yağsız tavada önlü arkalı pişirin.",
+                    "Sıcak servis edin."
+                ]
+            },
+            "Köfte Rosto": {
+                ingredients: [
+                    "500 g kıyma",
+                    "1 adet soğan",
+                    "1 adet yumurta",
+                    "2 yemek kaşığı galeta unu",
+                    "2 yemek kaşığı zeytinyağı",
+                    "2 adet havuç",
+                    "2 adet patates",
+                    "Tuz, karabiber, kimyon"
+                ],
+                steps: [
+                    "Kıyma, rendelenmiş soğan, yumurta, galeta unu ve baharatları yoğurup rulo şeklinde köfte hazırlayın.",
+                    "Tavanın içinde her tarafını hafifçe kızartın.",
+                    "Dilimlenmiş havuç ve patatesleri yanına ekleyin.",
+                    "Üzerine az su ekleyip kapağı kapalı şekilde pişirin.",
+                    "Dilimleyerek sebzelerle birlikte servis edin."
+                ]
+            },
+            "Kıymalı Ispanak": {
+                ingredients: [
+                    "500 g ıspanak",
+                    "200 g kıyma",
+                    "1 adet soğan",
+                    "1 yemek kaşığı salça",
+                    "2 yemek kaşığı zeytinyağı",
+                    "Tuz, karabiber"
+                ],
+                steps: [
+                    "Ispanakları ayıklayıp iyice yıkayın ve doğrayın.",
+                    "Tencerede yağı ısıtıp doğranmış soğanı ve kıymayı kavurun.",
+                    "Salçayı ekleyip kokusu çıkana kadar kavurmaya devam edin.",
+                    "Ispanakları ekleyip karıştırın, suyunu salıp çekene kadar pişirin.",
+                    "Tuz ve karabiberle tatlandırıp yoğurtla servis edin."
+                ]
+            },
+            "Et Sote": {
+                ingredients: [
+                    "500 g kuşbaşı dana eti",
+                    "1 adet soğan",
+                    "2 adet biber",
+                    "2 adet domates",
+                    "2 yemek kaşığı sıvı yağ",
+                    "Tuz, karabiber, kekik"
+                ],
+                steps: [
+                    "Tencereye yağı alın, kızınca etleri ekleyip yüksek ateşte mühürleyin.",
+                    "Kısık ateşte kapağı kapalı şekilde etler yumuşayana kadar pişirin (gerekirse az su ekleyin).",
+                    "Doğranmış soğan ve biberleri ekleyip soteleyin.",
+                    "Domates ve baharatları ilave edip birkaç dakika daha pişirin.",
+                    "Sıcak servis edin."
+                ]
+            },
+            "Fırın Tavuk But": {
+                ingredients: [
+                    "4 adet tavuk but",
+                    "2 yemek kaşığı zeytinyağı",
+                    "1 tatlı kaşığı kırmızı toz biber",
+                    "1 çay kaşığı kekik",
+                    "Tuz, karabiber",
+                    "2 adet patates (isteğe bağlı)"
+                ],
+                steps: [
+                    "Tavuk butlarını yıkayıp kurulayın.",
+                    "Yağ ve baharatları bir kapta karıştırıp butlara iyice yedirin.",
+                    "İsterseniz dilimlenmiş patatesleri de aynı karışıma bulayın.",
+                    "Fırın tepsisine dizip 190 °C’de kızarana kadar pişirin.",
+                    "Sıcak servis edin."
+                ]
+            },
+            "Hünkar Beğendi": {
+                ingredients: [
+                    "400 g kuşbaşı dana eti",
+                    "2 yemek kaşığı tereyağı",
+                    "1 yemek kaşığı salça",
+                    "2 adet domates",
+                    "Tuz, karabiber",
+                    "3 adet patlıcan",
+                    "2 yemek kaşığı un",
+                    "2 su bardağı süt",
+                    "1 su bardağı rendelenmiş kaşar"
+                ],
+                steps: [
+                    "Etleri tencerede kavurun, salça ve doğranmış domatesi ekleyip kısık ateşte pişirin.",
+                    "Patlıcanları közleyip kabuklarını soyun ve doğrayın.",
+                    "Tencerede tereyağı ve unu kavurup sütü ekleyerek beşamel sos hazırlayın.",
+                    "Közlenmiş patlıcanları ve kaşarı ekleyip karıştırın, tuzla tatlandırın.",
+                    "Servis tabağına beğendiyi yayın, üzerine etli karışımı ekleyerek servis edin."
+                ]
+            },
+            "Kuru Fasulye": {
+                ingredients: [
+                    "2 su bardağı kuru fasulye",
+                    "1 adet soğan",
+                    "2 yemek kaşığı sıvı yağ",
+                    "1 yemek kaşığı salça",
+                    "Tuz, karabiber"
+                ],
+                steps: [
+                    "Fasulyeleri bir gece önceden suda bekletin ve haşlayın.",
+                    "Tencerede yağı ısıtıp doğranmış soğanı kavurun.",
+                    "Salçayı ekleyip kavurduktan sonra haşlanmış fasulyeleri ekleyin.",
+                    "Üzerini geçecek kadar sıcak su ekleyin.",
+                    "Tuz ve baharatları ekleyip fasulyeler tamamen yumuşayana kadar pişirin."
+                ]
+            },
+            "Izgara Tavuk": {
+                ingredients: [
+                    "500 g tavuk göğsü veya but (ızgaralık)",
+                    "3 yemek kaşığı zeytinyağı",
+                    "1 yemek kaşığı yoğurt",
+                    "1 diş sarımsak",
+                    "Tuz, karabiber, kekik, pul biber"
+                ],
+                steps: [
+                    "Yağ, yoğurt, ezilmiş sarımsak ve baharatları karıştırın.",
+                    "Tavukları bu sosla harmanlayıp en az 30 dakika buzdolabında dinlendirin.",
+                    "Izgara tavasında veya mangalda önlü arkalı pişirin.",
+                    "Yanında pilav ve salata ile servis edin."
+                ]
+            },
+            "Mantarlı Dana Sote": {
+                ingredients: [
+                    "400 g kuşbaşı dana eti",
+                    "200 g mantar",
+                    "1 adet soğan",
+                    "2 yemek kaşığı sıvı yağ",
+                    "Tuz, karabiber"
+                ],
+                steps: [
+                    "Etleri tencerede veya tavada mühürleyip suyunu salıp çekene kadar pişirin.",
+                    "Doğranmış soğanı ekleyip kavurun.",
+                    "Dilimlenmiş mantarları ekleyip suyunu çekene kadar pişirin.",
+                    "Tuz ve karabiber ile tatlandırın.",
+                    "Yanında yoğurt veya pilav ile servis edin."
+                ]
+            },
+            "Yaprak Sarma": {
+                ingredients: [
+                    "300 g asma yaprağı",
+                    "1,5 su bardağı pirinç",
+                    "1 adet soğan",
+                    "Yarım çay bardağı zeytinyağı",
+                    "Maydanoz, nane",
+                    "Tuz, karabiber"
+                ],
+                steps: [
+                    "Soğanı ve yeşillikleri ince ince doğrayın, pirinçle karıştırın.",
+                    "Zeytinyağı, tuz ve baharatları ekleyip iç harcı hazırlayın.",
+                    "Yaprakları sıcak suda kısa süre bekletip yumuşatın.",
+                    "Her yaprağa harçtan koyup sarın ve tencereye dizin.",
+                    "Üzerine yaprak kapatıp su ekleyin, kısık ateşte pirinçler yumuşayana kadar pişirin."
+                ]
+            },
+            "Nohut": {
+                ingredients: [
+                    "2 su bardağı nohut",
+                    "1 adet soğan",
+                    "2 yemek kaşığı sıvı yağ",
+                    "1 yemek kaşığı salça",
+                    "Tuz, karabiber"
+                ],
+                steps: [
+                    "Nohutları bir gece önceden ıslatın ve haşlayın.",
+                    "Tencerede yağı ısıtıp doğranmış soğanı kavurun.",
+                    "Salçayı ekleyip kokusu çıkana kadar kavurun.",
+                    "Haşlanmış nohutu ve üzerini geçecek kadar sıcak suyu ekleyin.",
+                    "Tuz ve baharatları ilave edip nohutlar iyice yumuşayana kadar pişirin."
+                ]
+            },
+            "Dana Rosto": {
+                ingredients: [
+                    "600 g dana rosto (parça et)",
+                    "2 yemek kaşığı sıvı yağ",
+                    "2 adet havuç",
+                    "2 adet patates",
+                    "1 adet soğan",
+                    "Tuz, karabiber, defne yaprağı"
+                ],
+                steps: [
+                    "Eti tencereye alıp her tarafını yüksek ateşte mühürleyin.",
+                    "Doğranmış soğanı, havuç ve patatesleri ekleyin.",
+                    "Tuz, karabiber ve defne yaprağı ile tatlandırın.",
+                    "Üzerini geçmeyecek kadar sıcak su ekleyip kısık ateşte et yumuşayana kadar pişirin.",
+                    "Dilimleyerek sebzelerle birlikte servis edin."
+                ]
+            },
+            "Kıymalı Karnabahar": {
+                ingredients: [
+                    "1 orta boy karnabahar",
+                    "200 g kıyma",
+                    "1 adet soğan",
+                    "1 yemek kaşığı salça",
+                    "2 yemek kaşığı sıvı yağ",
+                    "Tuz, karabiber"
+                ],
+                steps: [
+                    "Karnabaharı çiçeklerine ayırıp yıkayın.",
+                    "Tencerede yağı ısıtıp doğranmış soğan ve kıymayı kavurun.",
+                    "Salçayı ekleyip kavurduktan sonra karnabaharı ilave edin.",
+                    "Üzerini hafif geçecek kadar su ekleyin, tuz ve karabiberle tatlandırın.",
+                    "Sebzeler yumuşayana kadar pişirin ve yoğurtla servis edin."
+                ]
+            },
+            "Dolma": {
+                ingredients: [
+                    "10-12 adet dolmalık biber veya diğer sebzeler",
+                    "1,5 su bardağı pirinç",
+                    "1 adet soğan",
+                    "Yarım çay bardağı zeytinyağı",
+                    "Maydanoz, nane",
+                    "Tuz, karabiber, isteğe göre kıyma"
+                ],
+                steps: [
+                    "Pirinç, doğranmış soğan ve yeşillikleri karıştırın.",
+                    "Zeytinyağı ve baharatları ekleyip iç harcını hazırlayın.",
+                    "Biberlerin sap ve çekirdek kısımlarını çıkarın.",
+                    "Harçla çok doldurmadan içlerini doldurun ve tencereye dizin.",
+                    "Üzerine su ekleyip pirinçler yumuşayana kadar pişirin."
+                ]
+            },
+            "Tavuk But": {
+                ingredients: [
+                    "4 adet tavuk but",
+                    "3 yemek kaşığı zeytinyağı",
+                    "1 diş sarımsak",
+                    "Tuz, karabiber, kekik, kırmızı toz biber"
+                ],
+                steps: [
+                    "Tavuk butlarını yıkayıp kurulayın.",
+                    "Yağ, ezilmiş sarımsak ve baharatları karıştırın.",
+                    "Butları bu karışımla harmanlayıp buzdolabında dinlendirin.",
+                    "Fırında veya tavada kızarana kadar pişirin.",
+                    "Yanında garnitür veya salata ile servis edin."
+                ]
+            },
+            "Dana Sote": {
+                ingredients: [
+                    "500 g kuşbaşı dana eti",
+                    "1 adet soğan",
+                    "2 yemek kaşığı sıvı yağ",
+                    "1 yemek kaşığı salça",
+                    "Tuz, karabiber"
+                ],
+                steps: [
+                    "Etleri tencerede sıvı yağ ile kavurun.",
+                    "Doğranmış soğanı ekleyip kavurmaya devam edin.",
+                    "Salçayı ilave edip kokusu çıkana kadar kavurun.",
+                    "Üzerini hafif geçecek kadar sıcak su ekleyip etler yumuşayana kadar pişirin.",
+                    "Baharatlarla tatlandırıp servis edin."
+                ]
+            },
+            "Mantarlı Tavuk": {
+                ingredients: [
+                    "500 g kuşbaşı tavuk",
+                    "200 g mantar",
+                    "1 adet soğan",
+                    "2 yemek kaşığı sıvı yağ",
+                    "Tuz, karabiber"
+                ],
+                steps: [
+                    "Tavukları tavada yağ ile kavurun.",
+                    "Doğranmış soğanı ekleyip soteleyin.",
+                    "Dilimlenmiş mantarları ekleyip suyunu salıp çekene kadar pişirin.",
+                    "Tuz ve karabiberle tatlandırın.",
+                    "Sıcak servis edin."
+                ]
+            },
+            "Izgara Et veya Tavuk (Serbest)": {
+                ingredients: [
+                    "Kişi sayısına göre kırmızı et veya tavuk",
+                    "Zeytinyağı",
+                    "Tuz, karabiber, isteğe göre baharatlar"
+                ],
+                steps: [
+                    "Et veya tavukları dilimleyin veya porsiyonlayın.",
+                    "Zeytinyağı ve baharatlarla harmanlayın.",
+                    "Izgara tavasında veya mangalda pişirin.",
+                    "Yanında salata ve ekmekle servis edin."
+                ]
+            },
+            "Karışık Izgara": {
+                ingredients: [
+                    "Sucuk, köfte, tavuk, kırmızı et (karışık)",
+                    "Zeytinyağı",
+                    "Tuz, karabiber"
+                ],
+                steps: [
+                    "Tüm etleri porsiyonlayıp hafifçe yağ ve baharatla harmanlayın.",
+                    "Izgarayı ısıtın ve ürünleri pişme sürelerine göre sırayla ızgaraya yerleştirin.",
+                    "Her iki tarafını da kızarana kadar pişirin.",
+                    "Büyük bir servis tabağında karışık olarak servis edin."
+                ]
+            }
+        };
+
+        (function () {
+            const modal = document.getElementById("recipe-modal");
+            const modalTitle = document.getElementById("modal-title");
+            const modalIngredients = document.getElementById("modal-ingredients");
+            const modalSteps = document.getElementById("modal-steps");
+            const modalVideo = document.getElementById("modal-video");
+            const closeBtn = modal.querySelector(".close-btn");
+
+            function openModal(mealName) {
+                const recipe = recipes[mealName];
+
+                modalTitle.textContent = mealName;
+                modalIngredients.innerHTML = "";
+                modalSteps.innerHTML = "";
+                modalVideo.innerHTML = "";
+
+                if (recipe) {
+                    recipe.ingredients.forEach(item => {
+                        const li = document.createElement("li");
+                        li.textContent = item;
+                        modalIngredients.appendChild(li);
+                    });
+
+                    recipe.steps.forEach(step => {
+                        const li = document.createElement("li");
+                        li.textContent = step;
+                        modalSteps.appendChild(li);
+                    });
+                } else {
+                    const liIng = document.createElement("li");
+                    liIng.textContent = "Bu yemek için tarif henüz eklenmedi.";
+                    modalIngredients.appendChild(liIng);
+
+                    const liStep = document.createElement("li");
+                    liStep.textContent = "Tarif bilgisi eklendiğinde burada görünecek.";
+                    modalSteps.appendChild(liStep);
+                }
+
+                // Video alanı: sadece belirlediğin videoId varsa embed göster
+                // Örnek kullanım:
+                // recipes["Ali Nazik"].videoId = "YOUTUBE_VIDEO_ID";
+                if (recipe && recipe.videoId) {
+                    const wrapper = document.createElement("div");
+                    wrapper.className = "video-wrapper";
+
+                    const iframe = document.createElement("iframe");
+                    iframe.src = "https://www.youtube.com/embed/" + recipe.videoId;
+                    iframe.title = mealName + " tarifi videosu";
+                    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                    iframe.allowFullscreen = true;
+
+                    wrapper.appendChild(iframe);
+                    modalVideo.appendChild(wrapper);
+                } else {
+                    const info = document.createElement("p");
+                    info.textContent = "Bu yemek için video henüz eklenmedi.";
+                    modalVideo.appendChild(info);
+                }
+
+                modal.classList.remove("hidden");
+                document.body.classList.add("modal-open");
+            }
+
+            function closeModal() {
+                modal.classList.add("hidden");
+                document.body.classList.remove("modal-open");
+            }
+
+            // Menü öğelerine tıklama olayı ekle
+            document.querySelectorAll(".menu-item").forEach(function (item) {
+                item.addEventListener("click", function () {
+                    // Metinden ana yemek adını çıkar (+ işaretinden önceki kısım)
+                    const rawText = item.textContent || "";
+                    const normalized = rawText.replace(/\s+/g, " ").trim();
+                    const mainPart = normalized.split("+")[0].trim();
+                    openModal(mainPart);
+                });
+            });
+
+            // Kapatma butonu
+            closeBtn.addEventListener("click", closeModal);
+
+            // Dışarı tıklayınca kapat
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // ESC ile kapat
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
