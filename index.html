@@ -244,6 +244,59 @@
             border-radius: 8px;
         }
 
+        /* Mobil uyumlu düzenlemeler */
+        @media (max-width: 768px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .container {
+                padding: 28px 18px 32px;
+                box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .week-header {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .days-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
+            }
+
+            .day-card {
+                min-height: 90px;
+                padding: 10px 8px;
+            }
+
+            .day-number {
+                font-size: 20px;
+            }
+
+            .meal-name {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 16px 8px;
+            }
+
+            .container {
+                padding: 24px 14px 28px;
+            }
+
+            .days-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @keyframes modal-appear {
             from {
                 transform: translateY(8px) scale(0.96);
