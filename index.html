@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>30 Günlük İftar Menüsü</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#8b7355">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -535,6 +537,15 @@
     </div>
 
     <script>
+        // Service worker kaydı (PWA için)
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("sw.js").catch(function (err) {
+                    console.warn("Service worker kaydı başarısız:", err);
+                });
+            });
+        }
+
         // Basit tarif verileri – menüdeki tüm ana yemekler için
         const recipes = {
             "Ali Nazik": {
